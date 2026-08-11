@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Arte Ecuatoriano</title>
 
     <style>
@@ -15,7 +14,7 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: #f4f4f4;
+            background: #f2f2f2;
             color: #222;
         }
 
@@ -23,11 +22,11 @@
             background: #111;
             color: white;
             text-align: center;
-            padding: 40px 20px;
+            padding: 45px 20px;
         }
 
         header h1 {
-            font-size: 38px;
+            font-size: 40px;
             margin-bottom: 10px;
         }
 
@@ -37,7 +36,7 @@
 
         .contenedor {
             width: 90%;
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 40px auto;
         }
 
@@ -45,61 +44,66 @@
             background: white;
             padding: 30px;
             border-radius: 15px;
-            margin-bottom: 40px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            margin-bottom: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
         }
 
         .introduccion h2 {
-            font-size: 28px;
             margin-bottom: 15px;
         }
 
         .introduccion p {
-            font-size: 17px;
             line-height: 1.6;
-        }
-
-        /* CADA PINTURA ESTÁ EN SU PROPIA SECCIÓN */
-        .pintura {
-            background: white;
-            margin-bottom: 40px;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-        }
-
-        .pintura h2 {
-            text-align: center;
-            font-size: 28px;
-            margin-bottom: 25px;
-        }
-
-        .contenido-pintura {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 35px;
-            flex-wrap: wrap;
-        }
-
-        .imagen-pintura {
-            width: 400px;
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .descripcion {
-            max-width: 450px;
             font-size: 17px;
-            line-height: 1.7;
         }
 
-        .descripcion h3 {
-            margin-bottom: 12px;
-            font-size: 22px;
+        .obras {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .obra {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.2s;
+        }
+
+        .obra:hover {
+            transform: translateY(-5px);
+        }
+
+        .obra img {
+            width: 100%;
+            height: 350px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .obra h2 {
+            margin: 20px 0 10px;
+        }
+
+        .obra p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .boton {
+            display: inline-block;
+            background: #111;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+        }
+
+        .boton:hover {
+            background: #333;
         }
 
         footer {
@@ -111,16 +115,12 @@
         }
 
         @media (max-width: 700px) {
+            .obras {
+                grid-template-columns: 1fr;
+            }
+
             header h1 {
-                font-size: 28px;
-            }
-
-            .contenido-pintura {
-                flex-direction: column;
-            }
-
-            .imagen-pintura {
-                width: 100%;
+                font-size: 30px;
             }
         }
     </style>
@@ -128,119 +128,67 @@
 
 <body>
 
-    <header>
-        <h1>Arte Ecuatoriano</h1>
-        <p>Proyecto Universitario</p>
-    </header>
+<header>
+    <h1>Arte Ecuatoriano</h1>
+    <p>Proyecto Universitario</p>
+</header>
 
-    <div class="contenedor">
+<div class="contenedor">
 
-        <!-- INTRODUCCIÓN -->
-        <section class="introduccion">
-            <h2>El arte ecuatoriano</h2>
+    <section class="introduccion">
+        <h2>Obras de arte ecuatoriano</h2>
 
-            <p>
-                El arte ecuatoriano representa parte de la historia,
-                cultura e identidad del Ecuador. En esta página se
-                presentan dos obras de artistas ecuatorianos,
-                acompañadas de información sobre cada pintura.
-            </p>
-        </section>
+        <p>
+            En esta página se presentan dos obras representativas
+            del arte ecuatoriano. Selecciona una de las pinturas
+            para conocer más información sobre ella.
+        </p>
+    </section>
 
+    <section class="obras">
 
         <!-- PINTURA 1 -->
-        <section class="pintura">
+        <div class="obra">
 
-            <h2>Pintura 1: El Grito</h2>
+            <img src="grito.jfif" alt="El Grito">
 
-            <div class="contenido-pintura">
+            <h2>El Grito</h2>
 
-                <img
-                    src="grito.jfif"
-                    alt="El Grito - Oswaldo Guayasamín"
-                    class="imagen-pintura"
-                >
+            <p>
+                Oswaldo Guayasamín
+            </p>
 
-                <div class="descripcion">
+            <a href="grito.html" class="boton">
+                Ver pintura
+            </a>
 
-                    <h3>El Grito</h3>
-
-                    <p>
-                        <strong>Autor:</strong> Oswaldo Guayasamín
-                    </p>
-
-                    <br>
-
-                    <p>
-                        Esta obra representa el sufrimiento, la angustia
-                        y el dolor humano. Es una muestra de la fuerza
-                        expresiva característica del arte de Oswaldo
-                        Guayasamín.
-                    </p>
-
-                    <br>
-
-                    <p>
-                        La obra refleja una preocupación por las
-                        injusticias y el sufrimiento de las personas.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
+        </div>
 
 
         <!-- PINTURA 2 -->
-        <section class="pintura">
+        <div class="obra">
 
-            <h2>Pintura 2: El Carbonero</h2>
+            <img src="mann.jfif" alt="El Carbonero">
 
-            <div class="contenido-pintura">
+            <h2>El Carbonero</h2>
 
-                <img
-                    src="mann.jfif"
-                    alt="El Carbonero - Eduardo Kingman"
-                    class="imagen-pintura"
-                >
+            <p>
+                Eduardo Kingman
+            </p>
 
-                <div class="descripcion">
+            <a href="carbonero.html" class="boton">
+                Ver pintura
+            </a>
 
-                    <h3>El Carbonero</h3>
+        </div>
 
-                    <p>
-                        <strong>Autor:</strong> Eduardo Kingman
-                    </p>
+    </section>
 
-                    <br>
+</div>
 
-                    <p>
-                        La obra representa el trabajo y las condiciones
-                        de vida de los trabajadores. Kingman es reconocido
-                        por representar al ser humano y las problemáticas
-                        sociales mediante un estilo expresionista.
-                    </p>
-
-                    <br>
-
-                    <p>
-                        Las manos y las figuras humanas tienen una gran
-                        importancia dentro de su producción artística.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </div>
-
-
-    <footer>
-        <p>Proyecto Universitario de Arte Ecuatoriano © 2026</p>
-    </footer>
+<footer>
+    <p>Proyecto Universitario de Arte Ecuatoriano © 2026</p>
+</footer>
 
 </body>
 </html>
